@@ -12,14 +12,14 @@ export default function Home() {
         <div id="content">
             <Linkbar />
 
-            <div id="main">
+            <main>
                 <Tweets loading={loading}
                     setLoading={setLoading}
                     data={data}
                     setData={setData} />
 
                 <Discover />
-            </div>
+            </main>
         </div>
     )
 }

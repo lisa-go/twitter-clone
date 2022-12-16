@@ -1,22 +1,32 @@
+header {
+    position: relative;
+    border-right: 1px solid lightgrey;
+    display: flex;
+    max-width: 10%;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+}
 
+#linkcont {
+    position: fixed;
+}
 
 #linkbar {
-    height: 100vh;
     background-color: white;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    padding: 1rem 2.5rem;
-    position: fixed;
-    width: max-content;
+    position: relative;
+    padding: 1rem;
 
     a {
         width: fit-content;
         border-radius: 2rem;
         display: flex;
         gap: 1rem;
-        margin: 4px;
-        padding: 1rem 2rem;
+        margin: 4px 2.5rem 4px 0;
+        padding: 12px 1rem;
 
         span {
             font-size: 20px;
@@ -35,33 +45,68 @@
     .twtBtn {
         background-color: rgb(29, 155, 240);
         color: white;
-        width: 100%;
-        padding: 1rem 0;
+        width: 80%;
+        padding: 10px 0;
         font-weight: 700;
         display: flex;
         justify-content: center;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: $v2 ) {
+    header {
+        flex: 0 0 auto;
+    }
 
+    #linkbar {
+        width: min-content;
+        margin: 0;
+
+        a {
+            width: min-content;
+            margin: 0;
+            padding: 15px;
+
+            span {
+                display: none;
+            }
+        }
+
+        .icon {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $v1 ) {
+    #linkcont {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: $vmobile) {
+    header {
+        z-index: 1;
+    }
     span {
         display: none;
+    }
+
+    #linkcont {
+        bottom: 0;
     }
 
     #linkbar {
         height: fit-content;
         width: 100vw;
         bottom: 0;
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
         padding: 0.5rem 0;
-    
 
         .mobHide {
             display: none;
         }
     }
-
-    
 }

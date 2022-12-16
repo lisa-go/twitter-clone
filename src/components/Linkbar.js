@@ -8,6 +8,8 @@ import { CiCircleMore } from 'react-icons/ci';
 export default function Linkbar () {
 
     return (
+        <header>
+            <div id="linkcont">
         <div id="linkbar">
             <Link to="/home" className="icon mobHide" >
                 <RiTwitterFill size={40} color="rgb(29, 155, 240)" />
@@ -59,5 +61,7 @@ export default function Linkbar () {
 
             <div className="mobHide">Account</div>
         </div>
+        </div>
+        </header>
     )
 }
