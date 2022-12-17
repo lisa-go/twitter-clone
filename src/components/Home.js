@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Discover from './Discover';
 import Linkbar from './Linkbar';
-import Tweets from './Tweets';
+import Main from './Main';
+
 
 export default function Home() {
     const [loading, setLoading] = useState(false);
@@ -12,14 +12,10 @@ export default function Home() {
         <div id="content">
             <Linkbar />
 
-            <main>
-                <Tweets loading={loading}
-                    setLoading={setLoading}
-                    data={data}
-                    setData={setData} />
-
-                <Discover />
-            </main>
+            <Main loading={loading}
+                setLoading={setLoading}
+                data={data}
+                setData={setData} />
         </div>
     )
 }

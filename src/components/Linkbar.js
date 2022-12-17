@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { RiTwitterFill, RiHome7Fill, RiHashtag, RiNotification2Line } from 'react-icons/ri';
+import { RiTwitterFill, RiHome7Fill, RiHashtag, RiNotification2Line, RiQuillPenLine } from 'react-icons/ri';
 import { HiOutlineMail, HiOutlineBookmark } from 'react-icons/hi';
 import { AiFillTwitterSquare } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 import { CiCircleMore } from 'react-icons/ci';
+import { GrFormAdd } from 'react-icons/gr';
 
 export default function Linkbar () {
 
@@ -20,7 +21,7 @@ export default function Linkbar () {
                 <span>Home</span>
             </Link>
 
-            <Link to="/">
+            <Link to="/discover">
                 <RiHashtag size={26.25} />
                 <span>Explore</span>
             </Link>
@@ -55,8 +56,12 @@ export default function Linkbar () {
                 <span>More</span>
             </Link>
 
-            <Link to="/compose/tweet" className="twtBtn mobHide">
+            <Link to="/compose/tweet" className="twtBtn">
                 <span>Tweet</span>
+                <div className="composeIcon">
+                    <GrFormAdd className="filter-bw add"/>
+                    <RiQuillPenLine size={22} className="feather" />
+                </div>
             </Link>
 
             <div className="mobHide">Account</div>

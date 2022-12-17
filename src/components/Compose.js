@@ -3,7 +3,7 @@
 export default function Compose () {
 
     return (
-        <div>
+        <div id="compose">
             Compose tweet
         </div>
     )

@@ -1,0 +1,9 @@
+#compose {
+    border: 1px solid $twt;
+}
+
+@media screen and (max-width: $vmobile) {
+    #compose {
+        display: none;
+    }
+}

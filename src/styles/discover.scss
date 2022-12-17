@@ -1,8 +1,10 @@
 #discover {
     width: 350px;
+    border-left: 1px solid $lg;
+    background-color: plum;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $v3) {
     #discover {
         display: none;
     }

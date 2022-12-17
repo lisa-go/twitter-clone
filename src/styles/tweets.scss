@@ -6,3 +6,8 @@
     width: 598px;
 }
 
+@media screen and (max-width: $vmobile) {
+    #tweetsContainer {
+        width: 100%;
+    }
+}
