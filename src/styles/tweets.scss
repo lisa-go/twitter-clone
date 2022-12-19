@@ -6,7 +6,8 @@
 
     .tweet {
         outline: 1px solid $lg;
-        padding: 1rem;
+        padding: 12px 20px;
+        padding-bottom: 0;
         display: grid;
         grid-template-columns: 53px auto;
 
@@ -37,10 +38,52 @@
             }
 
             .twtBadges {
-                padding-top: 1rem;
                 font-size: 13px;
+                color: $dg;
+                font-weight: 500;
                 display: flex;
                 justify-content: space-between;
+                
+                * {
+                    display: flex;
+                    align-items: center;
+                    padding: 8px;
+                    border-radius: 50%;
+                }
+
+                .blue:hover {
+                    svg {
+                        background-color: $ltwt;
+                        stroke: $twt !important;
+                    }
+
+                    span {
+                        color: $twt;
+                    }
+                }
+
+                .green:hover {
+                    svg {
+                        background-color: $lgrn;
+                        stroke: $dgrn !important;
+                        stroke-width: 2;
+                    }
+
+                    span {
+                        color: $dgrn;
+                    }
+                }
+
+                .pink:hover {
+                    svg {
+                        background-color: $lpnk;
+                        stroke: $dpnk !important;
+                    }
+
+                    span {
+                        color: $dpnk;
+                    }
+                }
             }
         }
     }

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FiMessageCircle } from 'react-icons/fi';
+import { FiRepeat } from 'react-icons/fi';
+import { HiOutlineHeart, HiOutlineUpload } from 'react-icons/hi';
 
 export default function Tweets ({ loading, setLoading, data, setData }) {
     useEffect(() => {
@@ -41,10 +44,25 @@ export default function Tweets ({ loading, setLoading, data, setData }) {
                             <div className="twtContent">{dt.twtcontent}</div>
 
                             <div className="twtBadges">
-                                <span>{dt.replies}</span>
-                                <span>{dt.retweets}</span>
-                                <span>{dt.likes}</span>
-                                <span>badge4</span>
+                                <div className="blue">
+                                    <FiMessageCircle size={18.75} />
+                                    <span>{dt.replies}</span>
+                                </div>
+
+                                <div className="green">
+                                    <FiRepeat size={18.75} />
+                                    <span>{dt.retweets}</span>
+                                </div>
+                                
+                                <div className="pink">
+                                    <HiOutlineHeart size={18.75} />
+                                    <span>{dt.likes}</span>
+                                </div>
+                                
+                                <div className="blue">
+                                    <HiOutlineUpload size={18.75} />
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
