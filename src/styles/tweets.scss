@@ -1,9 +1,44 @@
 #tweetsContainer {
-    background-color: grey;
     position: relative;
     display: flex;
     flex-direction: column;
     width: 598px;
+
+    .tweet {
+        outline: 1px solid $lg;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 53px auto;
+
+        .picture {
+            width: 48px;
+            padding-right: 5px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            font-size: 15px;
+
+            .twtHead {
+                display: flex;
+                gap: 6px;
+                color: grey;
+
+                .twtName {
+                    color: black;
+                    font-weight: 500;
+                }
+            }
+
+            .twtBadges {
+                padding-top: 1rem;
+                font-size: 13px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $vmobile) {
