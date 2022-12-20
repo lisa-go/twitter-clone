@@ -16,6 +16,7 @@ body {
     min-height: 100vh;
     position: relative;
     flex: 1 0 auto;
+    gap: 2px;
 }
 
 main {
@@ -27,8 +28,8 @@ main {
 #main {
     padding: 1rem 0;
     background-color: white;
-    border-left: 1px solid $lg;
-    border-right: 1px solid $lg;
+    border: 1px solid $lg;
+    border-top: none;
 }
 
 .pageHead {

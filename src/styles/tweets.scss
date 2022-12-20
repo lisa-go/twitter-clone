@@ -5,7 +5,7 @@
     width: 598px;
 
     .tweet {
-        outline: 1px solid $lg;
+        border-bottom: 1px solid $lg;
         padding: 12px 20px;
         padding-bottom: 0;
         display: grid;
@@ -87,6 +87,13 @@
                 }
             }
         }
+    }
+
+    .endtwt {
+        text-align: center;
+        color: $dg;
+        padding: 1rem;
+        font-size: 0.8rem;
     }
 }
 

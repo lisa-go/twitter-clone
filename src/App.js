@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Compose from "./components/Compose";
+import Discover from "./components/Discover";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 
@@ -11,6 +12,9 @@ export default function App() {
 
       <Route path="/home"
         element={<Home />} />
+
+      <Route path="/discover"
+        element={<Discover />} />
 
       <Route path="/profile"
         element={<Profile />} />

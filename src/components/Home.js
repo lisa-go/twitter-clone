@@ -8,14 +8,19 @@ export default function Home() {
 
     const [tweets, setTweets] = useState([{}]);
 
+    const [icon, setIcon] = useState('https://i.imgur.com/b8fNcS2.png');
+
     return (
         <div id="content">
-            <Linkbar />
+            <Linkbar icon={icon}
+                setIcon={setIcon} />
 
             <Main loading={loading}
                 setLoading={setLoading}
                 tweets={tweets}
-                setTweets={setTweets} />
+                setTweets={setTweets} 
+                icon={icon}
+                setIcon={setIcon} />
         </div>
     )
 }

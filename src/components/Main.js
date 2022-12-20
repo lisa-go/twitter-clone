@@ -4,7 +4,9 @@ import Discover from './Discover';
 import Compose from './Compose';
 import { HiOutlineSparkles } from 'react-icons/hi'
 
-export default function Main ({ loading, setLoading, tweets, setTweets }) {
+export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon }) {
+
+    
 
     return (
         <main>
@@ -18,6 +20,8 @@ export default function Main ({ loading, setLoading, tweets, setTweets }) {
 
                 <Compose tweets={tweets}
                     setTweets={setTweets}
+                    icon={icon}
+                    setIcon={setIcon}
                     />
 
                 <Tweets loading={loading}

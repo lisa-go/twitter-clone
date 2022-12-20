@@ -1,34 +1,56 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FiImage } from "react-icons/fi";
 import { RiFileGifFill } from "react-icons/ri";
 import { FaPollH } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { HiOutlineFaceSmile } from "react-icons/hi2";
 import { TbCalendarTime } from "react-icons/tb";
+import { useState } from "react";
+import axios from "axios";
 
-export default function Compose ({ tweets, setTweets }) {
+export default function Compose ({ tweets, setTweets, icon, setIcon }) {
 
-    const [icon, setIcon] = useState('https://i.imgur.com/b8fNcS2.png');
     const handleIcon = (e) => {
-      console.log(e.target.files);
       setIcon(URL.createObjectURL(e.target.files[0]));
     }
 
+    const { register, handleSubmit } = useForm();
+
+
+    const onSubmit = (form) => {
+        axios.post('http://localhost:8080/home', {
+            picon: icon,
+            pname: form.pname,
+            pusername: form.pusername,
+            twtcontent: form.twtcontent
+        })
+      }
+    
+
+
     return (
-        <form id="compose">
+        <form id="compose" onSubmit={handleSubmit(onSubmit)}>
             <label className="image">
                 <img src={icon} alt="icon" />
-                <input type="file" id="picon" 
-                accept="image/png, image/jpeg, image/jpg" onChange={handleIcon}/>
+                <input type="file" 
+                accept="image/png, image/jpeg, image/jpg" onChange={handleIcon}
+                     />
                 <span>Click on image to change</span>
             </label>
 
             <div className="right">
-                <textarea name="twtcontent" id="twtcontent" placeholder="What's happening?" />
+                <textarea placeholder="What's happening?"
+                    name="twtcontent" id="twtcontent" maxLength="300" required
+                    {...register('twtcontent')} />
 
                 <div className="names">
-                    <input type="text" name="pname" id="pname" placeholder="Name" />
-                    <input type="text" name="pusername" id="pusername" placeholder="@Username" pattern="^@?(\w){1,15}$"/>
+                    <input type="text" placeholder="Name"
+                        name="pname" id="pname" minLength="3"
+                        {...register('pname')} />
+                    <input type="text" placeholder="@Username" 
+                        name="pusername" id="pusername" minLength="3"
+                        pattern="(?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+)"
+                        {...register('pusername')} />
                 </div>
 
                 <div className="bottom">

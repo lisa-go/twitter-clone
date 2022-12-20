@@ -67,7 +67,8 @@ export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
                         </div>
                     </div>
                 )}
-
+                
+                <span className="endtwt">• No more tweets •</span>
         </div>
 
     )
