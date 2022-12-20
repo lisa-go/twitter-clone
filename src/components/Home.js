@@ -6,7 +6,7 @@ import Main from './Main';
 export default function Home() {
     const [loading, setLoading] = useState(false);
 
-    const [data, setData] = useState([{}]);
+    const [tweets, setTweets] = useState([{}]);
 
     return (
         <div id="content">
@@ -14,8 +14,8 @@ export default function Home() {
 
             <Main loading={loading}
                 setLoading={setLoading}
-                data={data}
-                setData={setData} />
+                tweets={tweets}
+                setTweets={setTweets} />
         </div>
     )
 }

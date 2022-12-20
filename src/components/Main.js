@@ -4,7 +4,7 @@ import Discover from './Discover';
 import Compose from './Compose';
 import { HiOutlineSparkles } from 'react-icons/hi'
 
-export default function Main ({ loading, setLoading, data, setData }) {
+export default function Main ({ loading, setLoading, tweets, setTweets }) {
 
     return (
         <main>
@@ -16,12 +16,15 @@ export default function Main ({ loading, setLoading, data, setData }) {
                     </Link>
                 </div>
 
-                <Compose />
+                <Compose tweets={tweets}
+                    setTweets={setTweets}
+                    />
 
                 <Tweets loading={loading}
                     setLoading={setLoading}
-                    data={data}
-                    setData={setData} />
+                    tweets={tweets}
+                    setTweets={setTweets} 
+                    />
             </div>
 
         <Discover />

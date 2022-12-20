@@ -4,7 +4,7 @@ import { FiMessageCircle } from 'react-icons/fi';
 import { FiRepeat } from 'react-icons/fi';
 import { HiOutlineHeart, HiOutlineUpload } from 'react-icons/hi';
 
-export default function Tweets ({ loading, setLoading, data, setData }) {
+export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
     useEffect(() => {
         setLoading(true);
         axios({
@@ -12,7 +12,7 @@ export default function Tweets ({ loading, setLoading, data, setData }) {
             url: 'http://localhost:8080/home'
         })
             .then(Response => {
-                setData(Response.data);
+                setTweets(Response.data);
                 console.log(Response.data);
             })
             .catch(Error => { console.log(Error) })
@@ -28,35 +28,35 @@ export default function Tweets ({ loading, setLoading, data, setData }) {
             {loading ?
                 <div>loading...</div>
                 :
-                data.map((dt) =>
-                    <div className="tweet" key={dt._id}>
+                tweets.map((tw) =>
+                    <div className="tweet" key={tw.pusername + tw._id + tw.date}>
                         <div className="picture">
-                            <img src={dt.picon} alt={dt.pname} />
+                            <img src={tw.picon} alt={tw.pname} />
                         </div>
 
                         <div className="text">
                             <div className="twtHead">
-                                <div className="twtName">{dt.pname}</div>
-                                <div>{dt.pusername}</div>
-                                <div>• {dt.date}</div>
+                                <div className="twtName">{tw.pname}</div>
+                                <div>{tw.pusername}</div>
+                                <div>• {tw.date}</div>
                             </div>
                             
-                            <div className="twtContent">{dt.twtcontent}</div>
+                            <div className="twtContent">{tw.twtcontent}</div>
 
                             <div className="twtBadges">
                                 <div className="blue">
                                     <FiMessageCircle size={18.75} />
-                                    <span>{dt.replies}</span>
+                                    <span>{tw.replies}</span>
                                 </div>
 
                                 <div className="green">
                                     <FiRepeat size={18.75} />
-                                    <span>{dt.retweets}</span>
+                                    <span>{tw.retweets}</span>
                                 </div>
                                 
                                 <div className="pink">
                                     <HiOutlineHeart size={18.75} />
-                                    <span>{dt.likes}</span>
+                                    <span>{tw.likes}</span>
                                 </div>
                                 
                                 <div className="blue">

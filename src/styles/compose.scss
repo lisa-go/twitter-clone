@@ -1,5 +1,53 @@
 #compose {
     border: 1px solid $twt;
+    display: grid;
+    grid-template-columns: 72px auto;
+
+    .image {
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        color: $dg;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 10px;
+        text-align: center;
+
+        img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    .right {
+        padding: 6px 12px;
+
+        textarea {
+            width: 100%;
+            height: 50px;
+            resize: none;
+        }
+
+        input {
+            font-family: $font;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+
+            .badges {
+                display: flex;
+                gap: 10px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $vmobile) {

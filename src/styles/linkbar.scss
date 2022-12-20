@@ -20,6 +20,7 @@ header {
     padding: 1rem;
 
     a {
+        color: $blk;
         width: fit-content;
         border-radius: 2rem;
         display: flex;
@@ -32,7 +33,7 @@ header {
         }
 
         &:hover {
-            background-color: rgb(228, 228, 228);
+            background-color: $lg;
         }
     }
 
