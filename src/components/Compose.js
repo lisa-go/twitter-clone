@@ -5,17 +5,18 @@ import { FaPollH } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { HiOutlineFaceSmile } from "react-icons/hi2";
 import { TbCalendarTime } from "react-icons/tb";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Compose ({ tweets, setTweets, icon, setIcon }) {
+export default function Compose({ tweets, setTweets, icon, setIcon }) {
 
     const handleIcon = (e) => {
-      setIcon(URL.createObjectURL(e.target.files[0]));
+        setIcon(URL.createObjectURL(e.target.files[0]));
     }
 
     const { register, handleSubmit } = useForm();
 
+    const [update, setUpdate] = useState(true);
 
     const onSubmit = (form) => {
         axios.post('http://localhost:8080/home', {
@@ -24,17 +25,25 @@ export default function Compose ({ tweets, setTweets, icon, setIcon }) {
             pusername: form.pusername,
             twtcontent: form.twtcontent
         })
-      }
-    
+        setUpdate(!update);
+    }
 
+    useEffect(() => {
+        axios.get('http://localhost:8080/home')
+        .then(Response => {
+            setTweets(Response.data);
+            console.log(Response.data);
+        })
+        .catch(Error => { console.log(Error) });
+    }, [update]);
 
     return (
         <form id="compose" onSubmit={handleSubmit(onSubmit)}>
             <label className="image">
                 <img src={icon} alt="icon" />
-                <input type="file" 
-                accept="image/png, image/jpeg, image/jpg" onChange={handleIcon}
-                     />
+                <input type="file"
+                    accept="image/png, image/jpeg, image/jpg" onChange={handleIcon}
+                />
                 <span>Click on image to change</span>
             </label>
 
@@ -47,7 +56,7 @@ export default function Compose ({ tweets, setTweets, icon, setIcon }) {
                     <input type="text" placeholder="Name"
                         name="pname" id="pname" minLength="3"
                         {...register('pname')} />
-                    <input type="text" placeholder="@Username" 
+                    <input type="text" placeholder="@Username"
                         name="pusername" id="pusername" minLength="3"
                         pattern="(?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+)"
                         {...register('pusername')} />

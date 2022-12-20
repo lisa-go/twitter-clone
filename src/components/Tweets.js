@@ -7,10 +7,7 @@ import { HiOutlineHeart, HiOutlineUpload } from 'react-icons/hi';
 export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
     useEffect(() => {
         setLoading(true);
-        axios({
-            method: 'GET',
-            url: 'http://localhost:8080/home'
-        })
+        axios.get('http://localhost:8080/home')
             .then(Response => {
                 setTweets(Response.data);
                 console.log(Response.data);
@@ -19,8 +16,6 @@ export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
             .finally(() => { setLoading(false) })
            
     }, []);
-
-
 
     return (
 
