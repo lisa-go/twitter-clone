@@ -100,6 +100,11 @@
 
 @media screen and (max-width: $vmobile) {
     #tweetsContainer {
-        width: 100%;
+        width: 100vw;
+        
+        .tweet {
+            width: 100vw;
+            word-break: break-word;
+        }
     }
 }

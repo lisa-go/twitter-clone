@@ -10,17 +10,25 @@ export default function Home() {
 
     const [icon, setIcon] = useState('https://i.imgur.com/b8fNcS2.png');
 
+    const [name, setName] = useState('');
+
+    const [username, setUsername] = useState('');
+
     return (
         <div id="content">
             <Linkbar icon={icon}
-                setIcon={setIcon} />
+                name={name}
+                username={username}
+                 />
 
             <Main loading={loading}
                 setLoading={setLoading}
                 tweets={tweets}
                 setTweets={setTweets} 
                 icon={icon}
-                setIcon={setIcon} />
+                setIcon={setIcon} 
+                setName={setName}
+                setUsername={setUsername} />
         </div>
     )
 }

@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import Tweets from './Tweets';
 import Discover from './Discover';
 import Compose from './Compose';
-import { HiOutlineSparkles } from 'react-icons/hi'
+import { HiOutlineSparkles } from 'react-icons/hi';
 
-export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon }) {
+export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername }) {
 
-    
+  
 
     return (
         <main>
@@ -18,10 +18,12 @@ export default function Main ({ loading, setLoading, tweets, setTweets, icon, se
                     </Link>
                 </div>
 
-                <Compose tweets={tweets}
+                <Compose
                     setTweets={setTweets}
                     icon={icon}
                     setIcon={setIcon}
+                    setName={setName}
+                    setUsername={setUsername}
                     />
 
                 <Tweets loading={loading}

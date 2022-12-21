@@ -8,7 +8,7 @@ import { TbCalendarTime } from "react-icons/tb";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Compose({ tweets, setTweets, icon, setIcon }) {
+export default function Compose({ setTweets, icon, setIcon, setName, setUsername }) {
 
     const handleIcon = (e) => {
         setIcon(URL.createObjectURL(e.target.files[0]));
@@ -37,6 +37,15 @@ export default function Compose({ tweets, setTweets, icon, setIcon }) {
         .catch(Error => { console.log(Error) });
     }, [update]);
 
+    const handleChange = (e) => {
+        if (e.target.id === 'pname') {
+         setName(e.target.value);   
+        };
+        if (e.target.id === 'pusername') {
+            setUsername(e.target.value);   
+        };
+      }
+
     return (
         <form id="compose" onSubmit={handleSubmit(onSubmit)}>
             <label className="image">
@@ -55,11 +64,11 @@ export default function Compose({ tweets, setTweets, icon, setIcon }) {
                 <div className="names">
                     <input type="text" placeholder="Name"
                         name="pname" id="pname" minLength="3"
-                        {...register('pname')} />
+                        {...register('pname')} onChange={handleChange} />
                     <input type="text" placeholder="@Username"
                         name="pusername" id="pusername" minLength="3"
                         pattern="(?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+)"
-                        {...register('pusername')} />
+                        {...register('pusername')} onChange={handleChange} />
                 </div>
 
                 <div className="bottom">
