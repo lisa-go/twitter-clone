@@ -17,16 +17,22 @@ export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
            
     }, []);
 
+    const defaultIcon = (e) => {
+        e.target.src = 'https://i.imgur.com/b8fNcS2.png';
+    }
+
     return (
 
         <div id="tweetsContainer">
+            <span className="endtwt">• No more tweets •</span>
+            
             {loading ?
                 <div>loading...</div>
                 :
                 tweets.map((tw) =>
                     <div className="tweet" key={tw.pusername + tw._id + tw.date}>
                         <div className="picture">
-                            <img src={tw.picon} alt={tw.pname} />
+                            <img src={tw.picon} alt={tw.pname} onError={defaultIcon} />
                         </div>
 
                         <div className="text">
@@ -62,8 +68,6 @@ export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
                         </div>
                     </div>
                 )}
-                
-                <span className="endtwt">• No more tweets •</span>
         </div>
 
     )
