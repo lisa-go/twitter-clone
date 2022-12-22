@@ -19,6 +19,7 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
     const [update, setUpdate] = useState(true);
 
     const onSubmit = (form) => {
+        
         axios.post('http://localhost:8080/home', {
             picon: icon,
             pname: form.pname,

@@ -7,7 +7,14 @@ import { CiCircleMore } from 'react-icons/ci';
 import { GrFormAdd } from 'react-icons/gr';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 
-export default function Linkbar ({ icon, name, username }) {
+export default function Linkbar ({ icon, name, username, isModal, setIsModal }) {
+
+    const handleModal = () => {
+        setIsModal(!isModal)
+
+        console.log('yes');
+        console.log(isModal);
+    }
 
     return (
         <header>
@@ -58,13 +65,13 @@ export default function Linkbar ({ icon, name, username }) {
                     <span>More</span>
                 </Link>
 
-                <Link to="/compose/tweet" className="twtBtn">
+                <button className="twtBtn" onClick={handleModal} >
                     <span>Tweet</span>
                     <div className="composeIcon">
                         <GrFormAdd className="filter-bw add"/>
                         <RiQuillPenLine size={22} className="feather" />
                     </div>
-                </Link>
+                </button>
             </div>
 
             <div className="account mobHide">

@@ -14,7 +14,6 @@ export default function Tweets ({ loading, setLoading, tweets, setTweets }) {
             })
             .catch(Error => { console.log(Error) })
             .finally(() => { setLoading(false) })
-           
     }, []);
 
     const defaultIcon = (e) => {
