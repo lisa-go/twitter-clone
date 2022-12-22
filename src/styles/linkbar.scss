@@ -187,6 +187,22 @@ header {
     }
 }
 
+@media screen and (max-width: $v2 ) {
+    #linkbar {
+        .links {
+
+            .twtBtn {
+                height: 46px;
+                align-items: center;
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: $vmobile) {
     header {
         z-index: 1;
