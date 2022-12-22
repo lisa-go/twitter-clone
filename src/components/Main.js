@@ -11,11 +11,15 @@ export default function Main ({ loading, setLoading, tweets, setTweets, icon, se
     return (
         <main>
             <div id="main">
+                
                 <div className="pageHead">
-                    <span>Home</span>
-                    <Link to="/discover">
-                        <HiOutlineSparkles size={20} />
-                    </Link>
+                    <img src={icon} alt="icon" />
+                    <div className="header">
+                        <span>Home</span>
+                        <Link to="/discover">
+                            <HiOutlineSparkles size={20} />
+                        </Link>
+                    </div>
                 </div>
 
                 <Compose

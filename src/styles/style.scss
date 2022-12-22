@@ -39,15 +39,29 @@ main {
     padding: 1rem;
     padding-top: 0;
     display: flex;
-    justify-content: space-between;
+    gap: 2rem;
 
-    a {
-        color: $blk;
-        padding: 6.5px 10px;
-        border-radius: 50%;
+    img {
+        display: none;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
 
-        &:hover {
-            background-color: $lg;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        a {
+            color: $blk;
+            padding: 6.5px 10px;
+            border-radius: 50%;
+    
+            &:hover {
+                background-color: $lg;
+            }
         }
     }
 }
@@ -83,6 +97,10 @@ a {
 
             .pageHead {
                 width: 100%;
+
+                img {
+                    display: block;
+                }
             }
         }
     }
