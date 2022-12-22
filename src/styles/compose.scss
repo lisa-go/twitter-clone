@@ -104,17 +104,33 @@
 
 #modal {
     background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
     
     .modalContainer {
-        
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10%;
+        position: fixed;
+        background-color: white;
+        height: fit-content;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        svg {
+            cursor: pointer;
+            color: $blk;
+            padding: 5px;
+            border-radius: 1rem;
+
+            &:hover {
+                background-color: $lg;
+            }
+        }
 
         #compose {
-            background-color: white;
+            border: none;
         }
     }
 }

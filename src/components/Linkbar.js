@@ -7,14 +7,9 @@ import { CiCircleMore } from 'react-icons/ci';
 import { GrFormAdd } from 'react-icons/gr';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 
-export default function Linkbar ({ icon, name, username, isModal, setIsModal }) {
+export default function Linkbar ({ icon, name, username, isModal, setIsModal, handleModal }) {
 
-    const handleModal = () => {
-        setIsModal(!isModal)
 
-        console.log('yes');
-        console.log(isModal);
-    }
 
     return (
         <header>

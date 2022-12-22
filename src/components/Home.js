@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Linkbar from './Linkbar';
 import Main from './Main';
 import Compose from './Compose';
+import { CgClose } from 'react-icons/cg';
 
 
 export default function Home() {
@@ -17,6 +18,10 @@ export default function Home() {
 
     const [isModal, setIsModal] = useState(false);
 
+    const handleModal = () => {
+        setIsModal(!isModal);
+    }
+
     return (
         <div id="content">
             <Linkbar icon={icon}
@@ -24,6 +29,7 @@ export default function Home() {
                 username={username}
                 isModal={isModal}
                 setIsModal={setIsModal}
+                handleModal={handleModal}
                  />
 
             <Main loading={loading}
@@ -37,14 +43,16 @@ export default function Home() {
                 isModal={isModal} />
 
             {isModal ? 
-            <div id="modal"> 
-                <div className="modalContainer">
+            <div id="modal" onClick={handleModal}> 
+                <div className="modalContainer" onClick={(e) => e.stopPropagation()}>
+                    <CgClose size={20} onClick={handleModal} />
                     <Compose
                     setTweets={setTweets}
                     icon={icon}
                     setIcon={setIcon}
                     setName={setName}
                     setUsername={setUsername}
+                    onClick={(e) => e.stopPropagation()}
                     />
                 </div>    
             </div>: null}
