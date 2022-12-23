@@ -27,8 +27,6 @@ export default function Home() {
             <Linkbar icon={icon}
                 name={name}
                 username={username}
-                isModal={isModal}
-                setIsModal={setIsModal}
                 handleModal={handleModal}
                  />
 

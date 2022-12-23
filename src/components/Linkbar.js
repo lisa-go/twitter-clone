@@ -6,8 +6,9 @@ import { BsPerson } from 'react-icons/bs';
 import { CiCircleMore } from 'react-icons/ci';
 import { GrFormAdd } from 'react-icons/gr';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
+import { FiSearch } from 'react-icons/fi';
 
-export default function Linkbar ({ icon, name, username, isModal, setIsModal, handleModal }) {
+export default function Linkbar ({ icon, name, username, handleModal }) {
 
 
 
@@ -26,7 +27,8 @@ export default function Linkbar ({ icon, name, username, isModal, setIsModal, ha
                 </Link>
 
                 <Link to="/discover">
-                    <RiHashtag size={26.25} />
+                    <RiHashtag size={26.25} className="hash" />
+                    <FiSearch size={26.25} className="srch" />
                     <span>Explore</span>
                 </Link>
 
