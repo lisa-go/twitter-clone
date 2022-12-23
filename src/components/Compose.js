@@ -8,7 +8,7 @@ import { TbCalendarTime } from "react-icons/tb";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Compose({ setTweets, icon, setIcon, setName, setUsername }) {
+export default function Compose({ setTweets, icon, setIcon, setName, setUsername, update, setUpdate }) {
 
     const handleIcon = (e) => {
         setIcon(URL.createObjectURL(e.target.files[0]));
@@ -16,7 +16,7 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
 
     const { register, handleSubmit } = useForm();
 
-    const [update, setUpdate] = useState(true);
+    
 
     const onSubmit = (form) => {
         

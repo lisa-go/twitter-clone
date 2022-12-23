@@ -1,8 +1,12 @@
-import Tweet from './Tweet';
+import Badges from './Badges';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export default function Tweets ({ loading, tweets, setTweets }) {
+export default function Tweets ({ loading, tweets, setTweets, update }) {
+
+    const defaultIcon = (e) => {
+        e.target.src = 'https://i.imgur.com/b8fNcS2.png';
+    }
 
     const [updateRT, setUpdateRT] = useState(false);
 
@@ -15,9 +19,7 @@ export default function Tweets ({ loading, tweets, setTweets }) {
                 console.log(Response.data);
             })
             .catch(Error => { console.log(Error) })
-    }, [updateRT, updateL]);
-
-
+    }, [update, updateRT, updateL]);
 
     return (
 
@@ -28,12 +30,32 @@ export default function Tweets ({ loading, tweets, setTweets }) {
                 <div>loading...</div>
                 :
                 tweets.map((tw) =>
-                    <Tweet key={tw.pusername + tw._id + tw.date}
-                    tw={tw} 
-                    updateRT={updateRT}
-                    setUpdateRT={setUpdateRT} 
-                    updateL={updateL}
-                    setUpdateL={setUpdateL} />
+                <div className="tweet" key={tw.pusername + tw._id + tw.date}>
+                    <div className="picture">
+                        <img src={tw.picon} alt={tw.pname} onError={defaultIcon} />
+                    </div>
+
+                    <div className="text">
+                        <div className="twtHead">
+                            <div className="twtName">{tw.pname}</div>
+                            <div>{tw.pusername}</div>
+                            <div>• {tw.date}</div>
+                        </div>
+
+                        <div className="twtContent">{tw.twtcontent}</div>
+
+                        <Badges key={tw._id}
+                            tw={tw} 
+                            updateRT={updateRT}
+                            setUpdateRT={setUpdateRT} 
+                            updateL={updateL}
+                            setUpdateL={setUpdateL} />
+
+                    </div>
+                </div>
+                    
+
+
                 )}
         </div>
 
