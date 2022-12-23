@@ -1,20 +1,18 @@
 import { FiMessageCircle } from 'react-icons/fi';
 import { FiRepeat } from 'react-icons/fi';
 import { HiOutlineHeart, HiOutlineUpload } from 'react-icons/hi';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
-export default function Tweet({ tw, updateRT, setUpdateRT }) {
+export default function Tweet({ tw, updateRT, setUpdateRT, updateL, setUpdateL }) {
 
     const [retweet, setRetweet] = useState(false);
 
-
+    const [like, setLike] = useState(false);
 
     const defaultIcon = (e) => {
         e.target.src = 'https://i.imgur.com/b8fNcS2.png';
     }
-
-
 
     const retweetStatus = (tw) => {
         setRetweet(!retweet);
@@ -35,6 +33,29 @@ export default function Tweet({ tw, updateRT, setUpdateRT }) {
                 _id: tw._id,
                 likes: tw.likes,
                 retweets: tw.retweets - 1
+            })
+        }
+    }
+
+    const likeStatus = (tw) => {
+        setLike(!like);
+        updateLike(tw)
+        setUpdateL(!updateL)
+    }
+
+    function updateLike(tw) {
+        if (like === false) {
+            axios.patch('http://localhost:8080/home/' + tw._id, {
+                _id: tw._id,
+                likes: tw.likes + 1,
+                retweets: tw.retweets 
+            })
+        }
+        if (like === true) {
+            axios.patch('http://localhost:8080/home/' + tw._id, {
+                _id: tw._id,
+                likes: tw.likes - 1,
+                retweets: tw.retweets
             })
         }
     }
@@ -66,8 +87,10 @@ export default function Tweet({ tw, updateRT, setUpdateRT }) {
                         <span>{tw.retweets}</span>
                     </div>
 
-                    <div className="pink">
-                        <HiOutlineHeart size={18.75} />
+                    <div className="pink" onClick={() => likeStatus(tw)}
+                        style={like ? { color: '#ee7387' } : {}}>
+                        <HiOutlineHeart size={18.75} 
+                            style={like ? { fill: '#ee7387' } : {}}/>
                         <span>{tw.likes}</span>
                     </div>
 
