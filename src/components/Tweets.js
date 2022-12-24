@@ -1,6 +1,7 @@
 import Badges from './Badges';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+var moment = require('moment');
 
 export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
 
@@ -48,7 +49,7 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
                             <div className="twtHead">
                                 <div className="twtName">{tw.pname}</div>
                                 <div>{tw.pusername}</div>
-                                <div>• {tw.date}</div>
+                                <div>• {moment(tw.date).fromNow()}</div>
                             </div>
 
                             <div className="twtContent">{tw.twtcontent}</div>

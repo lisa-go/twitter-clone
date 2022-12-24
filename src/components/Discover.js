@@ -1,12 +1,11 @@
 import { FiSearch } from 'react-icons/fi';
+var moment = require('moment');
 
 export default function Discover({ top }) {
 
     const defaultIcon = (e) => {
         e.target.src = 'https://i.imgur.com/b8fNcS2.png';
     }
-
-
 
     return (
         <div id="discover">
@@ -29,7 +28,7 @@ export default function Discover({ top }) {
                             <div className="text">
                                 <div className="twtHead">
                                     <div>{tw.pusername}</div>
-                                    <div>• {tw.date}</div>
+                                    <div>• {moment(tw.date).fromNow()}</div>
                                 </div>
     
                                 <div className="twtContent">{tw.twtcontent}</div>
