@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Linkbar from './Linkbar';
 import Main from './Main';
 import Compose from './Compose';
@@ -9,6 +9,8 @@ export default function Home() {
     const [loading, setLoading] = useState(false);
 
     const [tweets, setTweets] = useState([{}]);
+
+    const [top, setTop] = useState([{}]);
 
     const [icon, setIcon] = useState('https://i.imgur.com/b8fNcS2.png');
 
@@ -21,6 +23,8 @@ export default function Home() {
     const handleModal = () => {
         setIsModal(!isModal);
     }
+
+
 
     return (
         <div id="content">
@@ -38,7 +42,9 @@ export default function Home() {
                 setIcon={setIcon} 
                 setName={setName}
                 setUsername={setUsername}
-                isModal={isModal} />
+                isModal={isModal} 
+                setTop={setTop} 
+                top={top} />
 
             {isModal ? 
             <div id="modal" onClick={handleModal}> 

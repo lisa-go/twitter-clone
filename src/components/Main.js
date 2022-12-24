@@ -5,7 +5,7 @@ import Compose from './Compose';
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { useState } from 'react';
 
-export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername, isModal }) {
+export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername, isModal, top, setTop }) {
 
     const [update, setUpdate] = useState(false);
 
@@ -39,10 +39,13 @@ export default function Main ({ loading, setLoading, tweets, setTweets, icon, se
                     tweets={tweets}
                     setTweets={setTweets} 
                     update={update}
+                    top={top}
+                    setTop={setTop}
                     />
             </div>
 
-        <Discover />
+        <Discover 
+            top={top}/>
 
     </main>
     )
