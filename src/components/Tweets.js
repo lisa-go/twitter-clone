@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 var moment = require('moment');
 
-export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
+export default function Tweets({ loading, tweets, setTweets, update, setTop, top }) {
 
     const defaultIcon = (e) => {
         e.target.src = 'https://i.imgur.com/b8fNcS2.png';
@@ -13,23 +13,32 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
 
     const [updateL, setUpdateL] = useState(false);
 
+    const [updateTop, setUpdateTop] = useState(false);
+
     function settingTop() {
         const copy = tweets.splice(0);
         copy.sort((a, b) => a.likes - b.likes).reverse();
         const toptw = copy.slice(0, 5);
-        setTop(toptw)
+        setTop(toptw);
+        
     }
 
     async function getTweets() {
         const Response = await axios.get('http://localhost:8080/home')
         setTweets(Response.data);
         console.log(Response.data);
-        settingTop()
+        settingTop();  
     }
 
     useEffect(() => {
-        getTweets()
-    }, [update, updateRT, updateL]);
+        getTweets();
+        
+    }, [update, updateRT, updateL, updateTop]);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => setUpdateTop(!updateTop), 100);
+        return () => clearTimeout(timeout);
+    }, []);
 
     return (
 

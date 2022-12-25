@@ -8,7 +8,7 @@ import { TbCalendarTime } from "react-icons/tb";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Compose({ setTweets, icon, setIcon, setName, setUsername, update, setUpdate }) {
+export default function Compose({ setTweets, icon, setIcon, setName, setUsername, update, setUpdate, isModal }) {
 
     const handleIcon = (e) => {
         setIcon(URL.createObjectURL(e.target.files[0]));
@@ -16,10 +16,7 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
 
     const { register, handleSubmit } = useForm();
 
-    
-
     const onSubmit = (form) => {
-        
         axios.post('http://localhost:8080/home', {
             picon: icon,
             pname: form.pname,
@@ -31,21 +28,21 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
 
     useEffect(() => {
         axios.get('http://localhost:8080/home')
-        .then(Response => {
-            setTweets(Response.data);
-            console.log(Response.data);
-        })
-        .catch(Error => { console.log(Error) });
+            .then(Response => {
+                setTweets(Response.data);
+                console.log(Response.data);
+            })
+            .catch(Error => { console.log(Error) });
     }, [update]);
 
     const handleChange = (e) => {
         if (e.target.id === 'pname') {
-         setName(e.target.value);   
+            setName(e.target.value);
         };
         if (e.target.id === 'pusername') {
-            setUsername(e.target.value);   
+            setUsername(e.target.value);
         };
-      }
+    }
 
     return (
         <form id="compose" onSubmit={handleSubmit(onSubmit)}>
@@ -81,7 +78,12 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
                         <TbCalendarTime size={20} />
                         <HiOutlineLocationMarker size={20} />
                     </div>
-                    <button type="submit">Tweet</button>
+                    {isModal ?
+                        <button type="submit" onClick={() => window.location.reload()}>Tweet</button>
+                        :
+                        <button type="submit">Tweet</button>
+                    }
+
                 </div>
             </div>
         </form>

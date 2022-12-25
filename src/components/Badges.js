@@ -12,8 +12,8 @@ export default function Badges({ tw, updateRT, setUpdateRT, updateL, setUpdateL 
 
     const retweetStatus = (tw) => {
         setRetweet(!retweet);
-        updateRetweet(tw)
-        setUpdateRT(!updateRT)
+        updateRetweet(tw);
+        setUpdateRT(!updateRT);
     }
 
     function updateRetweet(tw) {
@@ -35,8 +35,8 @@ export default function Badges({ tw, updateRT, setUpdateRT, updateL, setUpdateL 
 
     const likeStatus = (tw) => {
         setLike(!like);
-        updateLike(tw)
-        setUpdateL(!updateL)
+        updateLike(tw);
+        setUpdateL(!updateL);
     }
 
     function updateLike(tw) {

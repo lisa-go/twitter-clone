@@ -24,8 +24,6 @@ export default function Home() {
         setIsModal(!isModal);
     }
 
-
-
     return (
         <div id="content">
             <Linkbar icon={icon}
@@ -56,6 +54,7 @@ export default function Home() {
                     setIcon={setIcon}
                     setName={setName}
                     setUsername={setUsername}
+                    isModal={isModal}
                     onClick={(e) => e.stopPropagation()}
                     />
                 </div>    
