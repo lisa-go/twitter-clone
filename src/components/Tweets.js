@@ -46,7 +46,7 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
     }, [update, updateRT, updateL, updateTop]);
 
     useEffect(() => {
-        const timeout = setTimeout(() => setUpdateTop(!updateTop), 200);
+        const timeout = setTimeout(() => setUpdateTop(!updateTop), 1000);
         return () => clearTimeout(timeout);
     }, []);
 
