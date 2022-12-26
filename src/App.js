@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import DiscoverPage from "./components/DiscoverPage";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
 import { useState } from "react";
 
 export default function App() {
@@ -19,7 +18,7 @@ export default function App() {
   const [isModal, setIsModal] = useState(false);
 
   const handleModal = () => {
-      setIsModal(!isModal);
+    setIsModal(!isModal);
   }
 
   return (
@@ -28,12 +27,12 @@ export default function App() {
         element={<Navigate to="/home" />} />
 
       <Route path="/home"
-        element={<Home 
+        element={<Home
           tweets={tweets}
           setTweets={setTweets}
           top={top}
           setTop={setTop}
-          icon={icon} 
+          icon={icon}
           setIcon={setIcon}
           name={name}
           setName={setName}
@@ -41,13 +40,13 @@ export default function App() {
           setUsername={setUsername}
           isModal={isModal}
           handleModal={handleModal}
-          />} />
+        />} />
 
       <Route path="/discover"
-        element={<DiscoverPage 
+        element={<DiscoverPage
           setTweets={setTweets}
           top={top}
-          icon={icon} 
+          icon={icon}
           setIcon={setIcon}
           name={name}
           setName={setName}
@@ -55,8 +54,8 @@ export default function App() {
           setUsername={setUsername}
           isModal={isModal}
           handleModal={handleModal}
-          />} />
-          
+        />} />
+
     </Routes>
   );
 }
