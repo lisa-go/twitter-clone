@@ -23,7 +23,6 @@ export default function Discover({ top }) {
 
     return (
         <div id="discover">
-
             <div className="searchbar">
                 <FiSearch />
                 <input type="text" placeholder="Search Twitter" />
@@ -35,19 +34,19 @@ export default function Discover({ top }) {
                     top.map((tw) => {
                         return (
                             <div className="tweet" key={tw._id}>
-                            <div className="picture">
-                                <img src={tw.picon} alt={tw.pname} onError={defaultIcon} />
-                            </div>
-    
-                            <div className="text">
-                                <div className="twtHead">
-                                    <div>{tw.pusername}</div>
-                                    <div>• {moment(tw.date).fromNow()}</div>
+                                <div className="picture">
+                                    <img src={tw.picon} alt={tw.pname} onError={defaultIcon} />
                                 </div>
-    
-                                <div className="twtContent">{tw.twtcontent}</div>
+
+                                <div className="text">
+                                    <div className="twtHead">
+                                        <div>{tw.pusername}</div>
+                                        <div>• {moment(tw.date).fromNow()}</div>
+                                    </div>
+
+                                    <div className="twtContent">{tw.twtcontent}</div>
+                                </div>
                             </div>
-                        </div>
                         )
                     })
                 }

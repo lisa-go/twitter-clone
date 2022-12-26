@@ -79,7 +79,6 @@ export default function Badges({ tw, updateRT, setUpdateRT, updateL, setUpdateL 
             <div className="blue">
                 <HiOutlineUpload size={18.75} />
             </div>
-
         </div>
     )
 }

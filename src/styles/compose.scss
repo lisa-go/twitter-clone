@@ -93,7 +93,7 @@
                 border-radius: 2rem;
                 border: none;
                 background-color: $twt;
-                
+
                 &:hover {
                     background-color: $dtwt;
                 }
@@ -107,7 +107,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    
+
     .modalContainer {
         left: 50%;
         transform: translateX(-50%);
@@ -143,7 +143,7 @@
 
                 .bottom {
                     flex-wrap: wrap;
-                    
+
                 }
             }
         }
@@ -175,7 +175,7 @@
                     .bottom {
                         display: flex;
                         flex-direction: column;
-                        
+
                         button {
                             align-self: flex-end;
                         }

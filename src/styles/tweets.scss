@@ -44,7 +44,7 @@
                 font-weight: 500;
                 display: flex;
                 justify-content: space-between;
-                
+
                 * {
                     display: flex;
                     align-items: center;
@@ -101,7 +101,7 @@
 @media screen and (max-width: $vmobile) {
     #tweetsContainer {
         width: 100vw;
-        
+
         .tweet {
             width: 100vw;
             word-break: break-word;

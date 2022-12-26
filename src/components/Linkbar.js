@@ -8,79 +8,79 @@ import { GrFormAdd } from 'react-icons/gr';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 import { FiSearch } from 'react-icons/fi';
 
-export default function Linkbar ({ icon, name, username, handleModal }) {
+export default function Linkbar({ icon, name, username, handleModal }) {
 
     return (
         <header>
             <div id="linkcont">
-        <div id="linkbar">
-            <div className="links">
-                <Link to="/home" className="icon mobHide" >
-                    <RiTwitterFill size={40} color="rgb(29, 155, 240)" />
-                </Link>
+                <div id="linkbar">
+                    <div className="links">
+                        <Link to="/home" className="icon mobHide" >
+                            <RiTwitterFill size={40} color="rgb(29, 155, 240)" />
+                        </Link>
 
-                <Link to="/home">
-                    <RiHome7Fill  size={26.25} />
-                    <span>Home</span>
-                </Link>
+                        <Link to="/home">
+                            <RiHome7Fill size={26.25} />
+                            <span>Home</span>
+                        </Link>
 
-                <Link to="/discover">
-                    <RiHashtag size={26.25} className="hash" />
-                    <FiSearch size={26.25} className="srch" />
-                    <span>Explore</span>
-                </Link>
+                        <Link to="/discover">
+                            <RiHashtag size={26.25} className="hash" />
+                            <FiSearch size={26.25} className="srch" />
+                            <span>Explore</span>
+                        </Link>
 
-                <Link to="/">
-                    <RiNotification2Line size={26.25} />
-                    <span>Notifications</span>
-                </Link>
+                        <Link to="/">
+                            <RiNotification2Line size={26.25} />
+                            <span>Notifications</span>
+                        </Link>
 
-                <Link to="/" className="mobHide">
-                    <HiOutlineMail size={26.25} />
-                    <span>Messages</span>
-                </Link>
+                        <Link to="/" className="mobHide">
+                            <HiOutlineMail size={26.25} />
+                            <span>Messages</span>
+                        </Link>
 
-                <Link to="/" className="mobHide">
-                    <HiOutlineBookmark size={26.25} />
-                    <span>Bookmarks</span>
-                </Link>
+                        <Link to="/" className="mobHide">
+                            <HiOutlineBookmark size={26.25} />
+                            <span>Bookmarks</span>
+                        </Link>
 
-                <Link to="/" className="mobHide">
-                    <AiFillTwitterSquare size={26.25} />
-                    <span>Twitter Blue</span>
-                </Link>
+                        <Link to="/" className="mobHide">
+                            <AiFillTwitterSquare size={26.25} />
+                            <span>Twitter Blue</span>
+                        </Link>
 
-                <Link to="/">
-                    <BsPerson size={26.25} />
-                    <span>Profile</span>
-                </Link>
+                        <Link to="/">
+                            <BsPerson size={26.25} />
+                            <span>Profile</span>
+                        </Link>
 
-                <Link to="/" className="mobHide">
-                    <CiCircleMore size={26.25} />
-                    <span>More</span>
-                </Link>
+                        <Link to="/" className="mobHide">
+                            <CiCircleMore size={26.25} />
+                            <span>More</span>
+                        </Link>
 
-                <button className="twtBtn" onClick={handleModal} >
-                    <span>Tweet</span>
-                    <div className="composeIcon">
-                        <GrFormAdd className="filter-bw add"/>
-                        <RiQuillPenLine size={22} className="feather" />
+                        <button className="twtBtn" onClick={handleModal} >
+                            <span>Tweet</span>
+                            <div className="composeIcon">
+                                <GrFormAdd className="filter-bw add" />
+                                <RiQuillPenLine size={22} className="feather" />
+                            </div>
+                        </button>
                     </div>
-                </button>
-            </div>
 
-            <div className="account mobHide">
-                <img src={icon} alt="icon" />
-                <div className="names">
-                    <span className="name">{name}</span>
-                    <span>{username}</span>
+                    <div className="account mobHide">
+                        <img src={icon} alt="icon" />
+                        <div className="names">
+                            <span className="name">{name}</span>
+                            <span>{username}</span>
+                        </div>
+                        <span className="more">
+                            <MdOutlineMoreHoriz size={18.75} />
+                        </span>
+                    </div>
                 </div>
-                <span className="more">
-                    <MdOutlineMoreHoriz size={18.75} />
-                </span>
             </div>
-        </div>
-        </div>
         </header>
     )
 }

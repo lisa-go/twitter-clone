@@ -6,14 +6,12 @@ import { HiOutlineSparkles } from 'react-icons/hi';
 import { useState } from 'react';
 import Footer from './Footer';
 
-export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername, isModal, top, setTop, isDiscover, setIsDiscover }) {
+export default function Main({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername, top, setTop }) {
 
     const [update, setUpdate] = useState(false);
 
     return (
         <main>
-            {isDiscover ? null :
-
             <div id="main">
                 <div className="pageHead">
                     <img src={icon} alt="icon" />
@@ -34,26 +32,23 @@ export default function Main ({ loading, setLoading, tweets, setTweets, icon, se
                     setLoading={setLoading}
                     update={update}
                     setUpdate={setUpdate}
-                    />
+                />
 
                 <Tweets loading={loading}
                     setLoading={setLoading}
                     tweets={tweets}
-                    setTweets={setTweets} 
+                    setTweets={setTweets}
                     update={update}
-                    top={top}
                     setTop={setTop}
-                    />
+                />
             </div>
-        }
 
-        <div className="right">
-            <Discover 
-            top={top.slice(0,6)}/>
-            <Footer />
-        </div>
+            <div className="right">
+                <Discover
+                    top={top.slice(0, 6)} />
+                <Footer />
+            </div>
 
-
-    </main>
+        </main>
     )
 }

@@ -40,16 +40,13 @@ export default function App() {
           username={username}
           setUsername={setUsername}
           isModal={isModal}
-          setIsModal={setIsModal}
           handleModal={handleModal}
           />} />
 
       <Route path="/discover"
         element={<DiscoverPage 
-          tweets={tweets}
           setTweets={setTweets}
           top={top}
-          setTop={setTop}
           icon={icon} 
           setIcon={setIcon}
           name={name}
@@ -57,7 +54,6 @@ export default function App() {
           username={username}
           setUsername={setUsername}
           isModal={isModal}
-          setIsModal={setIsModal}
           handleModal={handleModal}
           />} />
           

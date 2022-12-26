@@ -5,7 +5,7 @@ import { FaPollH } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { HiOutlineFaceSmile } from "react-icons/hi2";
 import { TbCalendarTime } from "react-icons/tb";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 
 export default function Compose({ setTweets, icon, setIcon, setName, setUsername, update, setUpdate, isModal }) {
@@ -83,7 +83,6 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
                         :
                         <button type="submit">Tweet</button>
                     }
-
                 </div>
             </div>
         </form>

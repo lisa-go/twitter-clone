@@ -14,7 +14,7 @@ import cat9 from "../images/cat(9).png";
 
 var moment = require('moment');
 
-export default function Tweets({ loading, tweets, setTweets, update, setTop, top }) {
+export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
 
     const defaultImages = [cat0, cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9]
 
@@ -39,12 +39,12 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop, top
         const Response = await axios.get('http://localhost:8080/home')
         setTweets(Response.data);
         console.log(Response.data);
-        settingTop();  
+        settingTop();
     }
 
     useEffect(() => {
         getTweets();
-        
+
     }, [update, updateRT, updateL, updateTop]);
 
     useEffect(() => {
@@ -53,7 +53,6 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop, top
     }, []);
 
     return (
-
         <div id="tweetsContainer">
             <span className="endtwt">• No more tweets •</span>
 
@@ -81,14 +80,9 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop, top
                                 setUpdateRT={setUpdateRT}
                                 updateL={updateL}
                                 setUpdateL={setUpdateL} />
-
                         </div>
                     </div>
-
-
-
                 )}
         </div>
-
     )
 }
