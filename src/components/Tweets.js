@@ -18,9 +18,7 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop, top
     function settingTop() {
         const copy = tweets.splice(0);
         copy.sort((a, b) => a.likes - b.likes).reverse();
-        const toptw = copy.slice(0, 5);
-        setTop(toptw);
-        
+        setTop(copy);
     }
 
     async function getTweets() {
@@ -36,7 +34,7 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop, top
     }, [update, updateRT, updateL, updateTop]);
 
     useEffect(() => {
-        const timeout = setTimeout(() => setUpdateTop(!updateTop), 100);
+        const timeout = setTimeout(() => setUpdateTop(!updateTop), 200);
         return () => clearTimeout(timeout);
     }, []);
 

@@ -5,24 +5,10 @@ import Compose from './Compose';
 import { CgClose } from 'react-icons/cg';
 
 
-export default function Home() {
+export default function Home({ tweets, setTweets, top, setTop, icon, setIcon, name, setName, username, setUsername, isModal, setIsModal, handleModal }) {
     const [loading, setLoading] = useState(false);
 
-    const [tweets, setTweets] = useState([{}]);
 
-    const [top, setTop] = useState([{}]);
-
-    const [icon, setIcon] = useState('https://i.imgur.com/b8fNcS2.png');
-
-    const [name, setName] = useState('Name');
-
-    const [username, setUsername] = useState('@Username');
-
-    const [isModal, setIsModal] = useState(false);
-
-    const handleModal = () => {
-        setIsModal(!isModal);
-    }
 
     return (
         <div id="content">
@@ -42,7 +28,8 @@ export default function Home() {
                 setUsername={setUsername}
                 isModal={isModal} 
                 setTop={setTop} 
-                top={top} />
+                top={top} 
+                />
 
             {isModal ? 
             <div id="modal" onClick={handleModal}> 

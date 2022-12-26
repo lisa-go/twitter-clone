@@ -4,15 +4,17 @@ import Discover from './Discover';
 import Compose from './Compose';
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { useState } from 'react';
+import Footer from './Footer';
 
-export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername, isModal, top, setTop }) {
+export default function Main ({ loading, setLoading, tweets, setTweets, icon, setIcon, setName, setUsername, isModal, top, setTop, isDiscover, setIsDiscover }) {
 
     const [update, setUpdate] = useState(false);
 
     return (
         <main>
+            {isDiscover ? null :
+
             <div id="main">
-                
                 <div className="pageHead">
                     <img src={icon} alt="icon" />
                     <div className="header">
@@ -43,9 +45,14 @@ export default function Main ({ loading, setLoading, tweets, setTweets, icon, se
                     setTop={setTop}
                     />
             </div>
+        }
 
-        <Discover 
-            top={top}/>
+        <div className="right">
+            <Discover 
+            top={top.slice(0,6)}/>
+            <Footer />
+        </div>
+
 
     </main>
     )

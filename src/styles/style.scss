@@ -26,7 +26,7 @@ main {
 }
 
 #main {
-    padding: 1rem 0;
+    padding: 2rem 0;
     background-color: white;
     border: 1px solid $lg;
     border-top: none;
@@ -58,13 +58,35 @@ main {
             color: $blk;
             padding: 6.5px 10px;
             border-radius: 50%;
-    
+
             &:hover {
                 background-color: $lg;
             }
         }
     }
 }
+
+
+#footer {
+    margin-top: 2rem;
+    color: $dg;
+    font-size: 0.9rem;
+    width: 350px;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        line-height: 10px;
+
+        li a {
+            color: $dg;
+        }
+
+    }
+}
+
 
 a {
     text-decoration: none;

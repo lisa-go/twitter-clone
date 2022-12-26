@@ -10,8 +10,6 @@ import { FiSearch } from 'react-icons/fi';
 
 export default function Linkbar ({ icon, name, username, handleModal }) {
 
-
-
     return (
         <header>
             <div id="linkcont">
@@ -52,7 +50,7 @@ export default function Linkbar ({ icon, name, username, handleModal }) {
                     <span>Twitter Blue</span>
                 </Link>
 
-                <Link to="/profile">
+                <Link to="/">
                     <BsPerson size={26.25} />
                     <span>Profile</span>
                 </Link>

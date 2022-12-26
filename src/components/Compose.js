@@ -79,7 +79,7 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
                         <HiOutlineLocationMarker size={20} />
                     </div>
                     {isModal ?
-                        <button type="submit" onClick={() => window.location.reload()}>Tweet</button>
+                        <button type="submit" onClick={() => window.location = "/"}>Tweet</button>
                         :
                         <button type="submit">Tweet</button>
                     }
