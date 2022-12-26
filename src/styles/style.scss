@@ -82,6 +82,10 @@ main {
 
         li a {
             color: $dg;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
     }
