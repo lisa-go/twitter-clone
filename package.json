@@ -17,8 +17,11 @@
     "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://lisa-go.github.io/twitter-clone/",
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "sass": "^1.56.2",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0"

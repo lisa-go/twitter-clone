@@ -18,14 +18,14 @@ export default function Badges({ tw, updateRT, setUpdateRT, updateL, setUpdateL 
 
     function updateRetweet(tw) {
         if (retweet === false) {
-            axios.patch('http://localhost:8080/home/' + tw._id, {
+            axios.patch('https://wild-lime-magpie-yoke.cyclic.app/home/' + tw._id, {
                 _id: tw._id,
                 likes: tw.likes,
                 retweets: tw.retweets + 1
             })
         }
         if (retweet === true) {
-            axios.patch('http://localhost:8080/home/' + tw._id, {
+            axios.patch('https://wild-lime-magpie-yoke.cyclic.app/home/' + tw._id, {
                 _id: tw._id,
                 likes: tw.likes,
                 retweets: tw.retweets - 1
@@ -41,14 +41,14 @@ export default function Badges({ tw, updateRT, setUpdateRT, updateL, setUpdateL 
 
     function updateLike(tw) {
         if (like === false) {
-            axios.patch('http://localhost:8080/home/' + tw._id, {
+            axios.patch('https://wild-lime-magpie-yoke.cyclic.app/home/' + tw._id, {
                 _id: tw._id,
                 likes: tw.likes + 1,
                 retweets: tw.retweets
             })
         }
         if (like === true) {
-            axios.patch('http://localhost:8080/home/' + tw._id, {
+            axios.patch('https://wild-lime-magpie-yoke.cyclic.app/home/' + tw._id, {
                 _id: tw._id,
                 likes: tw.likes - 1,
                 retweets: tw.retweets

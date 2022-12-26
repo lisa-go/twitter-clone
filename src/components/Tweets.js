@@ -36,15 +36,13 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
     }
 
     async function getTweets() {
-        const Response = await axios.get('http://localhost:8080/home')
+        const Response = await axios.get('https://wild-lime-magpie-yoke.cyclic.app/home')
         setTweets(Response.data);
-        console.log(Response.data);
         settingTop();
     }
 
     useEffect(() => {
         getTweets();
-
     }, [update, updateRT, updateL, updateTop]);
 
     useEffect(() => {

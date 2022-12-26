@@ -17,7 +17,7 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (form) => {
-        axios.post('http://localhost:8080/home', {
+        axios.post('https://wild-lime-magpie-yoke.cyclic.app/home', {
             picon: icon,
             pname: form.pname,
             pusername: form.pusername,
@@ -27,10 +27,9 @@ export default function Compose({ setTweets, icon, setIcon, setName, setUsername
     }
 
     useEffect(() => {
-        axios.get('http://localhost:8080/home')
+        axios.get('https://wild-lime-magpie-yoke.cyclic.app/home')
             .then(Response => {
                 setTweets(Response.data);
-                console.log(Response.data);
             })
             .catch(Error => { console.log(Error) });
     }, [update]);
