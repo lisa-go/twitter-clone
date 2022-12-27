@@ -68,6 +68,7 @@
 }
 ```
 * Better understanding of States, when figuring out how to make only one button light up instead of all. ie. when pressing a 'like' button, only the 'like' button for that tweet lights up, not all.
+* How to create my own database with MongoDB.
 * Better understanding of ternary operators in React
 ```js
     <div className="pink" onClick={() => likeStatus(tw)}
