@@ -43,7 +43,7 @@ export default function Main({ loading, setLoading, tweets, setTweets, icon, set
                 />
             </div>
 
-            <div className="right">
+            <div className="rightPanel">
                 <div className="rightContainer">
                     <Discover
                     top={top.slice(0, 6)} />
