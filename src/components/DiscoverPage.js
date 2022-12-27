@@ -20,7 +20,9 @@ export default function DiscoverPage({ setTweets, top, icon, setIcon, name, setN
                         top={top.slice(0, 10)} />
                 </div>
                 <div className="right">
-                    <Footer />
+                    <div className="rightContainer">
+                        <Footer />
+                    </div>
                 </div>
             </main>
 

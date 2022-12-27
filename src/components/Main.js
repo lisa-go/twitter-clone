@@ -44,9 +44,11 @@ export default function Main({ loading, setLoading, tweets, setTweets, icon, set
             </div>
 
             <div className="right">
-                <Discover
+                <div className="rightContainer">
+                    <Discover
                     top={top.slice(0, 6)} />
-                <Footer />
+                    <Footer />
+                </div>
             </div>
 
         </main>

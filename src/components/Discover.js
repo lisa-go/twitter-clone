@@ -33,7 +33,7 @@ export default function Discover({ top }) {
                 {
                     top.map((tw) => {
                         return (
-                            <div className="tweet" key={tw._id}>
+                            <div className="tweet" key={tw.pusername + tw._id}>
                                 <div className="picture">
                                     <img src={tw.picon} alt={tw.pname} onError={defaultIcon} />
                                 </div>
