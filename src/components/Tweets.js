@@ -46,7 +46,7 @@ export default function Tweets({ loading, tweets, setTweets, update, setTop }) {
     }, [update, updateRT, updateL, updateTop]);
 
     useEffect(() => {
-        const interval = setInterval(() => setUpdateTop(!updateTop), 2000);
+        const interval = setInterval(() => setUpdateTop(!updateTop), 5000);
         return () => clearInterval(interval);
     }, []);
 
