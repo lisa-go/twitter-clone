@@ -48,6 +48,18 @@
 
 ### Discover Page
 <img src="https://i.imgur.com/dixja4l.png" alt="discoverpage" width="700" />
+
+### Home Page Small Window
+<img src="https://i.imgur.com/lo30O74.png" alt="small window" width="550" />
+
+### Home Page Mobile
+<img src="https://i.imgur.com/hVy6KTK.png" alt="mobilehomepage" width="300" />
+
+### Mobile Compose Modal
+<img src="https://i.imgur.com/elHxmhZ.png" alt="mobilecompose" width="300" />
+
+### Mobile Discover Page
+<img src="https://i.imgur.com/4tzZ7ok.png" alt="mobilediscover" width="300" />
 <br><br>
 
 # Things I learned from this Project
