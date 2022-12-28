@@ -111,3 +111,13 @@ main {
         display: none;
     }
 }
+
+@media screen and (max-width: $vmobile) {
+    main {
+        #main {
+            #discover {
+                width: 100vw;
+            }
+        }
+    }
+}
